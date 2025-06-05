@@ -7,3 +7,4 @@ Kindly refere to issues tab find them.
 2- Create a custom field mapped with a system field.
 3- Create logic hook.
 4- Autofill data in quickcreate from the parent module.
+5- Add preview_pdf entrypoint.
