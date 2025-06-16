@@ -1,0 +1,4 @@
+// And the created field should be added in the language file as:
+// suitecrm_data/custom/Extension/modules/Custom_Module/Ext/Language/_override_en_us.lang
+
+$mod_strings['LBL_LEAD_SOURCE'] = 'Prospect Source';
