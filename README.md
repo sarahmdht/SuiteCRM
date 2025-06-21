@@ -1,11 +1,39 @@
-# SuiteCRM
-In this repo code snippets for custom codes needed for modules and fields customization I dealed with through real world tasks I worked on.
+## SuiteCRM Custom Module Enhancements
+This project implements several key enhancements to improve functionality and user experience in SuiteCRM custom modules.
 
-# Tasks:
-1- Adding-Buttons: Adding email and print as PDF buttons to custom modules.
-2- Browser-Preview-EntryPoint: Add an entrypoint to make a pdf previewd on the browser without download.
-3- field-filter: Make relate field search results short listed to specific criteria.
-4- Fields: Create a fields manually in a custom module to be mapped with a system field.
-5- Logic-hooks: Create logic hooks:
-    a. Custom PDF regeneration with signature image included (e-signatures are saved as vectors and TCPDF reads JPG images so logic hook will convert image to be read by TCPDF and replaces the original PDF with the new signed one.)
-6- Subpanel-Autofill: Autofill data in quickcreate from the parent module.
+## Key Features
+1. Adding-Buttons:
+* Added action buttons for email and PDF export functionality in custom modules
+
+2. Browser-Preview-EntryPoint:
+* Developed browser-based PDF preview functionality
+* Eliminates mandatory downloads by providing inline document viewing
+* Supports all major browsers with responsive rendering
+
+3. field-filter:
+* Implemented advanced filtering for relate field search results
+* Added configurable criteria-based shortlisting
+* Improved search performance through optimized queries
+
+4. Fields:
+* Created manual field mapping system for custom modules
+* Established relationships between custom fields and system fields
+* Implemented field synchronization mechanisms
+
+5. Smart Logic Hooks
+    a. PDF Regeneration System:
+    * Automated PDF regeneration with embedded e-signatures
+    * Vector-to-raster conversion pipeline (supports JPG for TCPDF compatibility)
+    * Seamless document replacement workflow
+
+6. Subpanel-Autofill:
+* Developed parent-to-child data autofill system
+* Implemented in QuickCreate forms for improved data entry efficiency
+* Configurable field mapping and inheritance rules
+
+## Technical Implementation
+All enhancements follow SuiteCRM best practices for:
+* Module architecture
+* UI/UX consistency
+* Performance optimization
+* Data integrity preservation
