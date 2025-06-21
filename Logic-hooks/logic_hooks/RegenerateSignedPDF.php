@@ -1,4 +1,11 @@
 <?php
+/*
+This logic hook is used to regenerate an existing PDF but it do:
+* Find signature image and turn it from PNG to JPG as TCPDF do not read vector images
+* Add signature image to the newly generated PDF as TCPDF creates only and do not update
+* Replace the first document with the signed document
+* Send email to client with the signed document to be downloded to has his copy of the signed document
+*/
 if (!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 require_once('include/Sugarpdf/Sugarpdf.php');
@@ -11,7 +18,7 @@ class GenerateSignedAuditContractPDF
     {
         global $sugar_config;
         $result = [];
-        $contactId = $bean->contacts_tele_auditing_contract_1contacts_ida;
+        $contactId = $bean->contacts_Custom_Module_1contacts_ida;
         $signaturePath = $this->saveSignatureAsJpg($bean, $contactId, $_POST['img_data']);
         $originalFileName = $bean->id;
         $originalFilePath = 'upload://' . $originalFileName;
@@ -91,17 +98,15 @@ class GenerateSignedAuditContractPDF
             $subject = $template->parse_template($template->subject, $beanArray);
             $bodyHtml = '<h3>Dear '. $accountBean->person_of_contact_c . '</h3> ,
                 </br>
-                <p>We are pleased to inform you that you have successfully signed the auditing contract. Thank you for your prompt response and trust in our services.
-                Our team will now begin delivering the agreed-upon services as outlined in the contract.</p>
+                <p>We are pleased to inform you that you have successfully signed your contract........</p>
                 </br>
                 <p>You can download your signed copy of the contract from<a href="' . $sugar_config['site_url'] .
-                    ':8083/index.php?entryPoint=download&id=' . $signedFileName . '&type=Tele_Auditing_Contract"> here. </a>
+                    '/index.php?entryPoint=download&id=' . $signedFileName . '&type=Custom_Module"> here. </a>
                 </br>
-                <p>If you have any questions or need further assistance, feel free to contact us at any time at info@teleshieldusa.com.</p>
-                <p>We appreciate your trust in Teleshield and can’t wait to serve you!</p>
+                <p>rest of email</p>
                 </br>
                 <p>Best regards,</p>
-                <p>Teleshield Team</p>';
+                <p>Team</p>';
             $mail->Subject = $subject;
             $mail->Body = $bodyHtml;
             $mail->prepForOutbound();
@@ -163,7 +168,7 @@ class GenerateSignedAuditContractPDF
     }
     protected function getRelatedAccount($bean)
     {
-        $linkedAccounts = $bean->get_linked_beans('accounts_tele_auditing_contract_1', 'Account');
+        $linkedAccounts = $bean->get_linked_beans('accounts_Custom_Module_1', 'Account');
         return !empty($linkedAccounts) ? $linkedAccounts[0] : BeanFactory::newBean('Account');
     }
 }

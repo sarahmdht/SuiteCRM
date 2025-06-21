@@ -25,6 +25,7 @@ This project implements several key enhancements to improve functionality and us
     * Automated PDF regeneration with embedded e-signatures
     * Vector-to-raster conversion pipeline (supports JPG for TCPDF compatibility)
     * Seamless document replacement workflow
+    * Sending email to client to download his copy of the signed document
 
 6. Subpanel-Autofill:
 * Developed parent-to-child data autofill system
