@@ -16,7 +16,7 @@ $filename = $bean->filename ?: ($bean->id . '.pdf');
 
 if (file_exists($filepath)) {
     header('Content-Type: application/pdf');
-    header('Content-Disposition: inline; filename="' . $filename . '"');
+    header('Content-Disposition: inline; filename="' . $filename . '"'); // replace "inline" with "attachment" to make it download
     readfile($filepath);
     exit;
 } else {

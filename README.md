@@ -27,10 +27,16 @@ This project implements several key enhancements to improve functionality and us
     * Seamless document replacement workflow
     * Sending email to client to download his copy of the signed document
 
+    b. Custom CSS for Dashboard
+    * Making certain reports take full width of screen.
+
 6. Subpanel-Autofill:
 * Developed parent-to-child data autofill system
 * Implemented in QuickCreate forms for improved data entry efficiency
 * Configurable field mapping and inheritance rules
+
+7. Dashboard:
+* Adding counters for slected modules to be displayed in boxes in different background color gradients.
 
 ## Technical Implementation
 All enhancements follow SuiteCRM best practices for:

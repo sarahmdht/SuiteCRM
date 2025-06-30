@@ -8,3 +8,12 @@ $hook_array['after_save'][] = array(
     'GenerateSignedCustomContractPDF', // Class name (should match the class inside the PHP file)
     'generateSignedPDF' // Method to call in the class
 );
+
+//Custom logic hook for custom css for dashboard layout
+$hook_array['after_ui_frame'][] = Array(
+    1,
+    'Inject custom CSS for dashboard',
+    'custom/modules/Home/logic_hooks/CustomDashboardStyle.php',
+    'CustomDashboardStyle',
+    'injectCSS'
+);
